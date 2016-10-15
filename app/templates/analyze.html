@@ -5,6 +5,7 @@
     <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/bootstrap-theme.min.css">
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
   </head>
   <body>
 
@@ -40,15 +41,19 @@
       {% endfor %}
       {% endif %}
       {% endwith %}
+      <div id="player"></div>
+      <form  action="" method="post" role="form">
+        {{ form.csrf }}
+        <div class="form-group">
+          <label for="name">Youtube URL:</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter the Youtube URL">
+        </div>
+        <button type="submit" class="btn btn-success">Analyze!</button>
+      </form>
     </div>
     <br>      
   </div>
 </div>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.6.2.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script>
   // 2. This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
@@ -94,55 +99,6 @@
         player.stopVideo();
       }
     }
-
-    // below is the chart
-    $(function () {
-    $('#container').highcharts({
-        chart: {
-            type: 'area'
-        },
-        title: {text: 'Emotional Flow'},
-        subtitle: {text: 'Source: Team VideoTracker'},
-        xAxis: {
-            // categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
-            tickmarkPlacement: 'on',
-            title: {enabled: false},
-            crosshair: {enabled: true}
-        },
-        yAxis: {
-            title: {text: 'Percent'}
-        },
-        tooltip: {
-            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f} millions)<br/>',
-            split: true
-        },
-        plotOptions: {
-            area: {
-                stacking: 'percent',
-                lineColor: '#ffffff',
-                lineWidth: 1,
-                marker: {lineWidth: 1,lineColor: '#ffffff'}
-            }
-        },
-        series: [{
-            name: 'Asia',
-            data: [502, 635, 809, 947, 1402, 3634, 5268]
-        }, {
-            name: 'Africa',
-            data: [106, 107, 111, 133, 221, 767, 1766]
-        }, {
-            name: 'Europe',
-            data: [163, 203, 276, 408, 547, 729, 628]
-        }, {
-            name: 'America',
-            data: [18, 31, 54, 156, 339, 818, 1201]
-        }, {
-            name: 'Oceania',
-            data: [2, 2, 2, 6, 13, 30, 46]
-        }]
-    	});});
   </script>
-  <div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
-  </div>
 </body>
 </html>
