@@ -10,7 +10,7 @@
   <script src="../static/youtube.js"></script>
   <script src="../static/chart.js"></script>
   <head>
-    <title>Video Analyzer</title>
+    <title>Vibez</title>
     <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/bootstrap-theme.min.css">
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
@@ -22,12 +22,16 @@
     <div class="container">
 
 
-      <h2>Video Analyzer</h2>
+      <h2>Vibez</h2>
       <form action="analyze" method="post" role="form">
         {{ form.csrf }}
         <div class="form-group">
-          <label for="url">Youtube URL:</label>
+          <label for="url">1. Pick a YouTube video: </label>
           <input type="text" class="form-control" id="url" name="url" placeholder="Enter the Youtube URL">
+        </div>
+        <div class="form-group">
+          <label for "file">2. Upload the corresponding audo file: </label>
+          <input type="file" name="file">
         </div>
         <button type="submit" class="btn btn-success">Analyze!</button>
       </form>

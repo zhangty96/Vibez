@@ -16,12 +16,15 @@
       <br>
       <form action="analyze" method="post" role="form">
         {{ form.csrf }}
-        <div class="input-group">
+        <div class="form-group">
+          <label for="url">1. Pick a YouTube video: </label>
           <input type="text" class="form-control" id="url" name="url" placeholder="Enter the Youtube URL">
-          <span class="input-group-btn">
-            <button type="submit" class="btn btn-success">Analyze!</button>
-          </span>
         </div>
+        <div class="form-group">
+          <label for "file">2. Upload the corresponding audo file: </label>
+          <input type="file" name="file">
+        </div>
+        <button type="submit" class="btn btn-success">Analyze!</button>
       </form>
       <br>
       {% with messages = get_flashed_messages(with_categories=true) %}
