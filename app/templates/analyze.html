@@ -50,17 +50,19 @@
       {% endfor %}
       {% endif %}
       {% endwith %}
-      <div id="player"></div>
-      <div class="form-group">
-        <label for="seekTo">Seek to:</label>
-        <input type="text" class="form-control" id="seekTo" name="seekTo" placeholder="Seek how many seconds into the video?" onkeydown="if (event.keyCode == 13) seek()">
-      </div>
-      <button class="btn btn-success" onclick="seek()">Seek!</button>
-    </form>
+      <div id="player" style = "left:10%"></div>
+      <form  action="" method="post" role="form">
+        {{ form.csrf }}
+        <div class="form-group">
+          <label for="name">Youtube URL:</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter the Youtube URL">
+        </div>
+        <button type="submit" class="btn btn-success">Analyze!</button>
+      </form>
+    </div>
+    <br>      
   </div>
-  <br>      
-</div>
-<div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
+  <div id="container" style="min-width: 310px; height: 200px; max-width: 800px; margin: 0 auto">
 </div>
 
 
