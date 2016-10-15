@@ -1,5 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
+  
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.6.2.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="../static/chart.js"></script>
   <head>
     <title>Video Analyzer</title>
     <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
@@ -53,7 +60,9 @@
     </div>
     <br>      
   </div>
+  <div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
 </div>
+
 <script>
   // 2. This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
@@ -100,5 +109,6 @@
       }
     }
   </script>
+
 </body>
 </html>
