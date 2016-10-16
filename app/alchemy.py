@@ -1,7 +1,7 @@
 import json
 from watson_developer_cloud import AlchemyLanguageV1
 
-API_KEY = '5081e79ae767e8bdbb26f64def8f9615255a2913'
+API_KEY = '09587e700d3f83975527b8363015deaea2ca5cf8'
 
 
 def emotion(text_input):
