@@ -26,8 +26,13 @@ $(function () {
             categories: seg_locs,
             tickmarkPlacement: 'on',
             labels: {style: {color: '#E0E0E3'}},
+            lineColor:'#1a1d38',
+            gridLineColor:'#1a1d38'
         },
-                yAxis: {title: {text: 'Percent'}},
+        yAxis: {
+            title: {text: 'Percent'},
+            gridLineColor: '#1a1d38'
+        },
         tooltip: {
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b><br/>',
             split: true
@@ -35,7 +40,7 @@ $(function () {
         plotOptions: {
             area: {
                 stacking: 'percent',
-                lineColor: '#ffffff',
+                lineColor: '##00FFFFFF',
                 lineWidth: 1,
                 marker: {
                 enabled: false
