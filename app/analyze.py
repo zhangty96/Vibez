@@ -14,7 +14,7 @@ from emotion_parser import emotion_parser
 
 def analyze(filename):
   tts_json = tts(filename)
-  tts_json.strip() == '':
+  if tts_json.strip() == '':
     return ([], [], {}, [], [])
   wordlist, wordseg = script_parser(tts_json)
   words = []
