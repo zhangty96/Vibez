@@ -10,13 +10,13 @@
   <script src="../static/youtube.js"></script>
   <script src="../static/chart.js"></script>
   <head>
-    <title>Vibez</title>
+    <title>Video Analyzer</title>
     <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/bootstrap-theme.min.css">
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
 
   </head>
-  <link href="style.css" rel="stylesheet" type="text/css"
+
   <body>
 
 
@@ -24,16 +24,12 @@
     <div class="container">
 
 
-      <h2>Vibez</h2>
+      <center><h2>Video Analyzer</h2></center>
       <form action="analyze" method="post" role="form">
         {{ form.csrf }}
         <div class="form-group">
-          <label for="url">1. Pick a YouTube video: </label>
+          <label for="url">Youtube URL:</label>
           <input type="text" class="form-control" id="url" name="url" placeholder="Enter the Youtube URL">
-        </div>
-        <div class="form-group">
-          <label for "file">2. Upload the corresponding audo file: </label>
-          <input type="file" name="file">
         </div>
         <button type="submit" class="btn btn-success">Analyze!</button>
       </form>
@@ -56,13 +52,14 @@
       {% endfor %}
       {% endif %}
       {% endwith %}
-      <div id="player" style = "position:relative;left:10%"></div>
+      <div id="player" style = "position:relative;left:17%;" width=800px></div>
       <div id="player"></div>
-      <div class="form-group">
-        <label for="seekTo">Seek to:</label>
+
+      <!-- <div class="form-group">
+        <label for="seekTo">Seek Moment :</label>
         <input type="text" class="form-control" id="seekTo" name="seekTo" placeholder="Seek how many seconds into the video?" onkeydown="if (event.keyCode == 13) seek()">
-      </div>
-      <button class="btn btn-success" onclick="seek()">Seek!</button>
+      </div> -->
+      <!-- <button class="btn btn-success" onclick="seek()">Seek!</button> -->
     </div>
     <br>      
   </div>
