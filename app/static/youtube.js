@@ -16,8 +16,8 @@ function seekTo(seconds) {
 }
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '390',
-         width: '640',
+    height: '600',
+         width: '800',
          videoId: videoId,
          events: {
            'onReady': onPlayerReady,
