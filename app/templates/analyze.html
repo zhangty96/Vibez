@@ -25,26 +25,26 @@
     <title>Video Analyzer</title>
     <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/bootstrap-theme.min.css">
-    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name="viewport" content = "width=device-width initial-scale=1.0">
 
   </head>
   <body>
 
-  <style>
-  body{
-    background-image: url("https://c2.staticflickr.com/8/7163/6769877431_c0df769478_b.jpg");
-    background-size: 100% 100%;
-  }
-  h1{
-    font-size:6em;
-    font-family: "Brush Script MT", cursive;
-    color: white;
-  }
-  </style>
+    <style>
+      body{
+        background-image: url("https://c2.staticflickr.com/8/7163/6769877431_c0df769478_b.jpg");
+        background-size: 100% 100%;
+      }
+      h1{
+        font-size:6em;
+        font-family: "Brush Script MT", cursive;
+        color: white;
+      }
+    </style>
 
 
 
-    <div class="container">
+    <div class="container" style="width: 900px; padding: 50px; margin: 0 auto; background: rgba(255, 255, 255, 0.2">
 
       <h1 class="text-center">Vibez</h1>
       <form action="analyze" method="post" role="form" enctype="multipart/form-data">
@@ -80,23 +80,23 @@
       {% endfor %}
       {% endif %}
       {% endwith %}
-      <div id="player" style = "position:relative;left:22%;right:22%", align = "center"></div>
-      <canvas id="myCanvas" width="640" height="20" style="border:1px solid #d3d3d3;position:relative;left:22%">
-                          Your browser does not support the HTML5 canvas tag.</canvas>
-      <div id="player"></div>
+      <div id="player" style="margin:auto;display: block"></div>
+      <canvas id="myCanvas" width="800" height="20" style="padding-left: 0;padding-right: 0;margin-left: auto;margin-right: auto;display: block;border:0">Your browser does not support the HTML5 canvas tag.</canvas>
 
+      <br>
 
-      <div class="input-group", align="center">
+      <div class="input-group" align="center">
         <input type="text" class="form-control" id="search" name="search" placeholder="Search for a word or phrase..." onkeydown="if (event.keyCode == 13) searchCurKeywords()">
         <span class="input-group-btn">
           <button class="btn btn-success" onclick="searchCurKeywords()">Search!</button>
         </span>
       </div>
 
+    <br>
+    <div id="container" style="min-width: 310px; height: 300px; max-width: 800px; margin: 0 auto">
     </div>
   </div>
-  <div id="container" style="min-width: 310px; height: 300px; max-width: 800px; margin: 0 auto">
-</div>
+
 
 
 </body>

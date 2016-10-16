@@ -1,4 +1,4 @@
-var VIDWIDTH = 640;
+var VIDWIDTH = 800;
 
 $(function() {
 	$("#myCanvas").click(function(e){
@@ -15,13 +15,13 @@ $(function() {
 	var ctx = c.getContext("2d");
   ctx.beginPath();
   ctx.rect(0, 0, VIDWIDTH, 20);
-  ctx.fillStyle="red";
+  ctx.fillStyle="#bb0000";
   ctx.fill();
 	var myarray = inputarray;
 	for (i = 0; i < myarray.length; i++) {
     ctx.beginPath();
     ctx.rect(myarray[i]/player.getDuration()*VIDWIDTH, 0, 2, 20);
-    ctx.fillStyle = "yellow";
+    ctx.fillStyle = "#bbbb00";
     ctx.fill();
 	}};
 })( jQuery );
