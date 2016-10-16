@@ -29,11 +29,26 @@ def script_parser(json_string):
 
    return wordlist,wordseg
 
+def key_word_parser(json_string):
+   """
+   parse json string into list of five top occuring words
+   INPUT:
+      json_string: result of keyvalue api call
+   OUTPUT:
+      keywords = list of five words
+   """
+   input_string = json.loads(json_string)
+   keywords = []
+   for word in input_string['keywords'][0:5]:
+      keywords.append(word['text'])
+   return keywords
+
 if __name__ == "__main__":
 
-   input_string =open('test.txt').read();
+   input_string =open('test3.txt').read();
    # print input_string
 
-   print script_parser(input_string)[0]
-   print "-------------"
-   print script_parser(input_string)[1]
+   # print script_parser(input_string)[0]
+   # print "-------------"
+   # print script_parser(input_string)[1]
+   print key_word_parser(input_string)
