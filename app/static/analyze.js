@@ -15,7 +15,8 @@ function searchCurKeywords() {
 }
 
 function searchWords(searchKeywords) {
-  if (searchKeywords.length == 1) {
+  if (searchKeywords.length === 1) {
+    console.log(searchKeywords.length)
     keyword = searchKeywords[0].toLowerCase();
     if (keyword in word_locs) {
       return word_locs[keyword];
@@ -23,6 +24,7 @@ function searchWords(searchKeywords) {
       return [];
     }
   } else {
+    console.log(searchKeywords)
     match_locs = [];
     for (var i = 0; i < words.length - searchKeywords.length; i++) {
       if (match(searchKeywords, words, i)) {
@@ -39,6 +41,6 @@ function match(searchKeywords, words, i) {
     if (searchKeywords[j].toLowerCase() !== words[i+j]) {
       return false;
     }
-    return true;
   }
+  return true;
 }
