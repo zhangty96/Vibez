@@ -27,12 +27,22 @@
   </head>
   <body>
 
+  <style>
+  body{
+    background-image: url("https://theamazingworldofpsychiatry.files.wordpress.com/2010/09/istock_000009307982large.jpg")
+  }
+  h1{
+    font-size:6em;
+    font-family: "Brush Script MT", cursive;
+
+  }
+  </style>
+
 
 
     <div class="container">
 
-
-      <center><h2>Vibez</h2></center>
+      <h1 class="text-center">Vibez</h1>
       <form action="analyze" method="post" role="form" enctype="multipart/form-data">
 
         {{ form.csrf }}
@@ -66,6 +76,7 @@
       {% endfor %}
       {% endif %}
       {% endwith %}
+
       <div id="player" style = "position:relative;left:17%;" width=800px></div>
       <div id="player"></div>
 

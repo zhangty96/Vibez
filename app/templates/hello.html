@@ -1,7 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
+<<<<<<< HEAD
+</div>
+<div class = "background-image">
+</div>
+ -->
+=======
 <body background=http://gomediatech.com/wp/wp-content/uploads/2014/12/mediatech-video-walls.jpg>
 </body>
+>>>>>>> d04c96b0a1b9afcbf29518f32c593f9a5748e50f
 
 <html>
   <head>
@@ -11,12 +18,27 @@
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
   </head>
   <body>
+  <style>
+  body{
+    background-image: url("https://i.ytimg.com/vi/Z6eG4pemWs4/maxresdefault.jpg");
+  }
+  h1{
+    font-size:6em;
+    font-family: "Brush Script MT", cursive;
+    color: white;
 
-    <div class="container">
+  }
+  </style>
+
+      <div class="container">
 
 
-      <div style="top: 35%; left: 25%; position: absolute;">
+<<<<<<< HEAD
+        <div style="top: 35%; left: 25%; position: absolute;">
 
+        <h1 class="text-center"> Vibez </h1>
+        <br>
+=======
       <h1 color = "white"class="text-center">Vibez</h1>
       <br>
 
@@ -38,26 +60,45 @@
       <br>
       {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
+>>>>>>> d04c96b0a1b9afcbf29518f32c593f9a5748e50f
 
-      {% for message in messages %}
-      {% if "Error" not in message[1]: %}
-      <div class="alert alert-info">
-        <strong>Success! </strong> {{ message[1] }}
-      </div>
-      {% endif %}
+        <form action="analyze" method="post" role="form">
+          {{ form.csrf }}
+          <div class="form-group">
+            <h4><label for="url">1. Pick a YouTube video: </label></h4>
+            <input type="text" style="width: 700px;"class="form-control" id="url" name="url" placeholder="Enter the Youtube URL">
+          </div>
+          <div class="form-group">
+            <h4><label for "file">2. Upload the corresponding audo file: </label></h4>
+            <input type="file" name="file">
+          </div>
+          <div style="text-align: center;">
+          <button type="submit" class="btn btn-success">Analyze!</button>
+        </form>
+        <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
 
-      {% if "Error" in message[1]: %}
-      <div class="alert alert-warning">
-        {{ message[1] }}
+        {% for message in messages %}
+        {% if "Error" not in message[1]: %}
+        <div class="alert alert-info">
+          <strong>Success! </strong> {{ message[1] }}
+        </div>
+        {% endif %}
+
+        {% if "Error" in message[1]: %}
+        <div class="alert alert-warning">
+          {{ message[1] }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
       </div>
-      {% endif %}
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
+      <br>      
     </div>
-    <br>      
   </div>
-</div>
-  </div>
+    </div>
+
 </body>
 </html>
