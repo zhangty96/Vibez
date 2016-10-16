@@ -6,7 +6,16 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script> videoId = "{{ video_id }}"; </script>
+  <script>
+    videoId = "{{ video_id }}";
+    results = {{ results|tojson }};
+    console.log(results);
+    words = results[0];
+    locs = results[1];
+    word_locs = results[2];
+    seg_locs = results[3];
+    emotions = results[4];
+  </script>
   <script src="../static/youtube.js"></script>
   <script src="../static/chart.js"></script>
   <head>
@@ -16,7 +25,6 @@
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
 
   </head>
-
   <body>
 
 
@@ -24,12 +32,18 @@
     <div class="container">
 
 
-      <center><h2>Video Analyzer</h2></center>
-      <form action="analyze" method="post" role="form">
+      <center><h2>Vibez</h2></center>
+      <form action="analyze" method="post" role="form" enctype="multipart/form-data">
+
         {{ form.csrf }}
         <div class="form-group">
           <label for="url">Youtube URL:</label>
           <input type="text" class="form-control" id="url" name="url" placeholder="Enter the Youtube URL">
+        </div>
+
+        <div class="form-group">
+          <label for "file">2. Upload the corresponding audio file: </label>
+          <input type="file" name="file">
         </div>
         <button type="submit" class="btn btn-success">Analyze!</button>
       </form>
@@ -55,8 +69,19 @@
       <div id="player" style = "position:relative;left:17%;" width=800px></div>
       <div id="player"></div>
 
+
       <!-- <div class="form-group">
         <label for="seekTo">Seek Moment :</label>
+        
+      <div class="form-group">
+        <label for="search">Search in this clip:</label>
+        <input type="text" class="form-control" id="search" name="search" placeholder="Type a word or phrase..." onkeydown="if (event.keyCode == 13) search()">
+
+      </div>
+      <button class="btn btn-success" onclick="search()">Search!</button>
+
+      <div class="form-group">
+        <label for="seekTo">Seek to:</label>
         <input type="text" class="form-control" id="seekTo" name="seekTo" placeholder="Seek how many seconds into the video?" onkeydown="if (event.keyCode == 13) seek()">
       </div> -->
       <!-- <button class="btn btn-success" onclick="seek()">Seek!</button> -->
