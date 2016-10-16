@@ -4,6 +4,10 @@ $(function () {
     $('#container').highcharts({
         chart: {
             type: 'area',
+            backgroundColor: {
+              linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1},
+              stops: [[0, '#2a2a2b'], [1, '#2a2a2b']]
+            },
             marginTop: 10,
             marginBottom: 70,
             marginLeft:10,

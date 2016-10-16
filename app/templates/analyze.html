@@ -86,14 +86,14 @@
       <div id="player"></div>
 
 
-      <div class="form-group">
-        <label for="search">Search in this clip:</label>
-        <input type="text" class="form-control" id="search" name="search" placeholder="Type a word or phrase..." onkeydown="if (event.keyCode == 13) searchCurKeywords()">
-        <span><button class="btn btn-success" onclick="searchCurKeywords()">Search!</button></span>
+      <div class="input-group" style="position:relative;left:22%" width=800px, align="center">
+        <input type="text" class="form-control" id="search" name="search" placeholder="Search for a word or phrase..." onkeydown="if (event.keyCode == 13) searchCurKeywords()">
+        <span class="input-group-btn">
+          <button class="btn btn-success" onclick="searchCurKeywords()">Search!</button>
+        </span>
       </div>
 
     </div>
-    <br>      
   </div>
   <div id="container" style="min-width: 310px; height: 300px; max-width: 800px; margin: 0 auto">
 </div>
