@@ -6,7 +6,7 @@ def script_parser(json_string):
    INPUT:
 
    OUTPUT:
-      wordmap: 
+      wordlist: 
          list of tuples (words,time)
       wordseg:
          a list of list [time, [lsit of words]]
@@ -17,7 +17,7 @@ def script_parser(json_string):
    wordtime = input_string['results']
    start_time = 0
    wordseg = [(0, [])]
-   wordmap = []
+   wordlist = []
    for sentence in wordtime:
       for word in sentence['alternatives'][0]['timestamps']:
          if word[1]-wordseg[-1][0] < BUCKET:
@@ -25,9 +25,9 @@ def script_parser(json_string):
          else:  #if this is out of the timeframe
             wordseg.append((wordseg[-1][0] + BUCKET, []))
             wordseg[-1][1].append(word[0])
-         wordmap.append(tuple([word[0],word[1]]))
+         wordlist.append(tuple([word[0],word[1]]))
 
-   return wordmap,wordseg
+   return wordlist,wordseg
 
 if __name__ == "__main__":
 

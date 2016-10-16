@@ -15,6 +15,7 @@ $(function () {
             text: 'Source: Team VideoTracker'
         },
         xAxis: {
+            categories: seg_locs,
             tickmarkPlacement: 'on',
             title: {
                 enabled: false
@@ -22,7 +23,7 @@ $(function () {
         },
                 yAxis: {title: {text: 'Percent'}},
         tooltip: {
-            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f} millions)<br/>',
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b><br/>',
             split: true
         },
         plotOptions: {
@@ -35,21 +36,6 @@ $(function () {
                 }
             },
         },
-        series: [{
-            name: 'Sadness',
-            data: [502, 635, 809, 947, 1402, 3634, 5268]
-        }, {
-            name: 'Distaste',
-            data: [106, 107, 111, 133, 221, 767, 1766]
-        }, {
-            name: 'Joy',
-            data: [163, 203, 276, 408, 547, 729, 628]
-        }, {
-            name: 'Anger',
-            data: [18, 31, 54, 156, 339, 818, 1201]
-        }, {
-            name: 'Fear',
-            data: [2, 2, 2, 6, 13, 30, 46]
-        }]
+        series: emotions
     });
 });

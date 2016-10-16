@@ -27,15 +27,17 @@ def analyze(filename):
     else:
       word_locs[word].append(loc)
   seg_locs = []
+  assert len(words) == len(locs)
   emotions = {}
-  for start_time, words in wordseg:
-    phrase = ' '.join(words)
+  for start_time, phrase in wordseg:
+    phrase = ' '.join(phrase)
     emotion_json = emotion(phrase)
     emotion_map = emotion_parser(emotion_json)
-    seg_locs.append(str(start_time))
-    for emo, score in emotion_map:
+    seg_locs.append(start_time)
+    for emo, score in emotion_map.iteritems():
       if emo not in emotions:
         emotions[emo] = []
-      emotions[emo].append(score)
+      emotions[emo].append(float(score))
+  emotions = [{"name": emo, "data": scores} for emo, scores in emotions.iteritems()]
   return (words, locs, word_locs, seg_locs, emotions)
 
