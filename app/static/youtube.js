@@ -9,6 +9,9 @@ var player;
 function seek() {
   var seconds = parseInt(document.getElementById('seekTo').value);
   console.log(seconds)
+  seekTo(seconds)
+}
+function seekTo(seconds) {
   player.seekTo(seconds)
 }
 function onYouTubeIframeAPIReady() {

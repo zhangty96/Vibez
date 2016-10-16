@@ -1,8 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<body background=http://gomediatech.com/wp/wp-content/uploads/2014/12/mediatech-video-walls.jpg>
-</body>
-
 <html>
   <head>
     <font color = "white"><title>Vibez </title></font>
@@ -11,14 +8,24 @@
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
   </head>
   <body>
+  <style>
+  body{
+    background-image: url("https://i.ytimg.com/vi/Z6eG4pemWs4/maxresdefault.jpg");
+  }
+  h1{
+    font-size:6em;
+    font-family: "Brush Script MT", cursive;
+    color: white;
 
-    <div class="container">
+  }
+  </style>
 
+      <div class="container">
 
-      <div style="top: 35%; left: 25%; position: absolute;">
+        <div style="top: 35%; left: 25%; position: absolute;">
 
-      <h1 color = "white"class="text-center">Vibez</h1>
-      <br>
+        <h1 class="text-center"> Vibez </h1>
+        <br>
 
       <form action="analyze" method="post" role="form" enctype="multipart/form-data">
         {{ form.csrf }}
@@ -39,25 +46,27 @@
       {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
 
-      {% for message in messages %}
-      {% if "Error" not in message[1]: %}
-      <div class="alert alert-info">
-        <strong>Success! </strong> {{ message[1] }}
-      </div>
-      {% endif %}
+        {% for message in messages %}
+        {% if "Error" not in message[1]: %}
+        <div class="alert alert-info">
+          <strong>Success! </strong> {{ message[1] }}
+        </div>
+        {% endif %}
 
-      {% if "Error" in message[1]: %}
-      <div class="alert alert-warning">
-        {{ message[1] }}
+        {% if "Error" in message[1]: %}
+        <div class="alert alert-warning">
+          {{ message[1] }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
       </div>
-      {% endif %}
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
+      <br>      
     </div>
-    <br>      
   </div>
-</div>
-  </div>
+    </div>
+
 </body>
 </html>
