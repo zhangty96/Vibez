@@ -16,15 +16,16 @@
     word_locs = results[2];
     seg_locs = results[3];
     emotions = results[4];
+    keywords = results[5];
   </script>
-  <script src="../static/youtube.js"></script>
-  <script src="../static/chart.js"></script>
-  <script src="../static/video_bar.js"></script>
-  <script src="../static/analyze.js"></script>
+  <script src="static/youtube.js"></script>
+  <script src="static/chart.js"></script>
+  <script src="static/video_bar.js"></script>
   <head>
     <title>Video Analyzer</title>
     <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="static/analyze.css">
     <meta name="viewport" content = "width=device-width initial-scale=1.0">
 
   </head>
@@ -92,7 +93,12 @@
         </span>
       </div>
 
-    <br>
+      <br>
+
+      <div id="keywordsElem"> </div>
+
+      <br>
+
     <div id="container" style="min-width: 310px; height: 300px; max-width: 800px; margin: 0 auto">
     </div>
   </div>
@@ -100,4 +106,5 @@
 
 
 </body>
+  <script src="../static/analyze.js"></script>
 </html>

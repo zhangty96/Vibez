@@ -15,13 +15,13 @@ $(function() {
 	var ctx = c.getContext("2d");
   ctx.beginPath();
   ctx.rect(0, 0, VIDWIDTH, 20);
-  ctx.fillStyle="#990000";
+  ctx.fillStyle="#cc1b20";
   ctx.fill();
 	var myarray = inputarray;
 	for (i = 0; i < myarray.length; i++) {
     ctx.beginPath();
-    ctx.rect(myarray[i]/player.getDuration()*VIDWIDTH, 0, 5, 20);
-    ctx.fillStyle = "#999900";
+    ctx.rect(myarray[i]/player.getDuration()*VIDWIDTH, 0, 3, 20);
+    ctx.fillStyle = "#f0cc00";
     ctx.fill();
 	}};
 })( jQuery );
