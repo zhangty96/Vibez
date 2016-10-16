@@ -20,6 +20,7 @@
   <script src="../static/youtube.js"></script>
   <script src="../static/chart.js"></script>
   <script src="../static/video_bar.js"></script>
+  <script src="../static/analyze.js"></script>
   <head>
     <title>Video Analyzer</title>
     <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
@@ -84,20 +85,12 @@
       <div id="player"></div>
 
 
-      <!-- <div class="form-group">
-        <label for="seekTo">Seek Moment :</label>
       <div class="form-group">
         <label for="search">Search in this clip:</label>
-        <input type="text" class="form-control" id="search" name="search" placeholder="Type a word or phrase..." onkeydown="if (event.keyCode == 13) search()">
-
+        <input type="text" class="form-control" id="search" name="search" placeholder="Type a word or phrase..." onkeydown="if (event.keyCode == 13) searchCurKeywords()">
       </div>
-      <button class="btn btn-success" onclick="search()">Search!</button>
+      <button class="btn btn-success" onclick="searchCurKeywords()">Search!</button>
 
-      <div class="form-group">
-        <label for="seekTo">Seek to:</label>
-        <input type="text" class="form-control" id="seekTo" name="seekTo" placeholder="Seek how many seconds into the video?" onkeydown="if (event.keyCode == 13) seek()">
-      </div> -->
-      <!-- <button class="btn btn-success" onclick="seek()">Seek!</button> -->
     </div>
     <br>      
   </div>
