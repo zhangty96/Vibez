@@ -46,23 +46,6 @@
       {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
 
-        <form action="analyze" method="post" role="form">
-          {{ form.csrf }}
-          <div class="form-group">
-            <h4><label for="url">1. Pick a YouTube video: </label></h4>
-            <input type="text" style="width: 700px;"class="form-control" id="url" name="url" placeholder="Enter the Youtube URL">
-          </div>
-          <div class="form-group">
-            <h4><label for "file">2. Upload the corresponding audo file: </label></h4>
-            <input type="file" name="file">
-          </div>
-          <div style="text-align: center;">
-          <button type="submit" class="btn btn-success">Analyze!</button>
-        </form>
-        <br>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-
         {% for message in messages %}
         {% if "Error" not in message[1]: %}
         <div class="alert alert-info">
@@ -78,6 +61,7 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
+
       </div>
       <br>      
     </div>
