@@ -4,10 +4,10 @@ $(function () {
     $('#container').highcharts({
         chart: {
             type: 'area',
-            marginTop: 10,
+            marginTop: 0,
             marginBottom: 70,
-            marginLeft:0,
-            marginRight: 0,
+            marginLeft:-10,
+            marginRight: -10,
             backgroundColor: {
             linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
             stops: [
