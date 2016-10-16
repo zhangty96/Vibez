@@ -1,4 +1,4 @@
-var VIDWIDTH = 600;
+var VIDWIDTH = 616;
 
 $(function() {
 	$("#myCanvas").click(function(e){
