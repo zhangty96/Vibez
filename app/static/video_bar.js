@@ -1,4 +1,4 @@
-var VIDWIDTH = 616;
+var VIDWIDTH = 640;
 
 $(function() {
 	$("#myCanvas").click(function(e){
@@ -12,15 +12,16 @@ $(function() {
 (function( $ ) {
 	$.draw_bar = $.fn.draw_bar = function(inputarray) {
 	var c = document.getElementById("myCanvas");
-	var bar = c.getContext("2d");
-	    bar.fillStyle = "white";
-	    bar.rect(0, 0, VIDWIDTH, 20);
-	    bar.fill();
+	var ctx = c.getContext("2d");
+  ctx.beginPath();
+  ctx.rect(0, 0, VIDWIDTH, 20);
+  ctx.fillStyle="red";
+  ctx.fill();
 	var myarray = inputarray;
 	for (i = 0; i < myarray.length; i++) {
-	    var ctx = c.getContext("2d");
-	    ctx.fillStyle = "black";
-	    ctx.rect(myarray[i]/player.getDuration()*VIDWIDTH, 0, 2, 20);
-	    ctx.fill();
+    ctx.beginPath();
+    ctx.rect(myarray[i]/player.getDuration()*VIDWIDTH, 0, 2, 20);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
 	}};
 })( jQuery );
