@@ -12,7 +12,7 @@ $(function() {
 	$("#myCanvas").click(function(e){
    		var parentOffset = $(this).offset(); 
    		var relX = e.pageX - parentOffset.left;
- 		console.log(relX/600);
-
+ 		console.log(parseInt(relX/600*player.getDuration()));
+ 		seekTo(parseInt(relX/600*player.getDuration()));
 	});
 });

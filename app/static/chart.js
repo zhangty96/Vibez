@@ -4,22 +4,20 @@ $(function () {
     $('#container').highcharts({
         chart: {
             type: 'area',
+            marginTop: 10,
             marginBottom: 70,
             marginLeft:10,
-            marginRight: 50
+            marginRight: 10
         },
         title: {
-            text: 'Emotional Flow'
+            text: ''
         },
         subtitle: {
-            text: 'Source: Team VideoTracker'
+            enabled: false
         },
         xAxis: {
             categories: seg_locs,
             tickmarkPlacement: 'on',
-            title: {
-                enabled: false
-            }
         },
                 yAxis: {title: {text: 'Percent'}},
         tooltip: {

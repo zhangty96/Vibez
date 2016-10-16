@@ -33,8 +33,8 @@ def analyze_page():
   file = request.files['file']
   print file
   if file.filename == '':
-    flash('No selected file')
-    return render_template('hello.html', form=form)
+    flash('Error: No selected file')
+    return redirect('/')
   url=request.form['url']
   match = re.search(r"watch\?v=(.*)$", url)
   if match and form.validate():
